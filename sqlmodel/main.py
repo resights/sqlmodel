@@ -388,7 +388,7 @@ def get_sqlachemy_type(field: ModelField) -> Any:
     if issubclass(field.type_, int):
         return Integer
     if issubclass(field.type_, datetime):
-        return DateTime
+        return DateTime(timezone=True)
     if issubclass(field.type_, date):
         return Date
     if issubclass(field.type_, timedelta):
