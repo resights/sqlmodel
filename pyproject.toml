@@ -30,9 +30,9 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.6.1"
+python = "^3.8.1"
 SQLAlchemy = ">=1.4.17,<1.5.0"
-pydantic = "^1.8.2"
+pydantic = ">=2.0,<3.0"
 sqlalchemy2-stubs = {version = "*", allow-prereleases = true}
 
 [tool.poetry.dev-dependencies]
@@ -44,7 +44,7 @@ mkdocs = "^1.2.1"
 mkdocs-material = "^8.1.4"
 mdx-include = "^1.4.1"
 coverage = {extras = ["toml"], version = "^5.5"}
-fastapi = "^0.68.0"
+fastapi = "^0.115.12"
 requests = "^2.26.0"
 autoflake = "^1.4"
 isort = "^5.9.3"

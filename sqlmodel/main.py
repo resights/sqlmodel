@@ -11,6 +11,7 @@ from typing import (
     Callable,
     ClassVar,
     Dict,
+    ForwardRef,
     List,
     Mapping,
     Optional,
@@ -23,13 +24,13 @@ from typing import (
     cast,
 )
 
-from pydantic import BaseConfig, BaseModel
-from pydantic.errors import ConfigError, DictError
-from pydantic.fields import FieldInfo as PydanticFieldInfo
-from pydantic.fields import ModelField, Undefined, UndefinedType
-from pydantic.main import ModelMetaclass, validate_model
-from pydantic.typing import ForwardRef, NoArgAnyCallable, resolve_annotations
-from pydantic.utils import ROOT_KEY, Representation
+from pydantic.v1 import BaseConfig, BaseModel
+from pydantic.v1.errors import ConfigError, DictError
+from pydantic.v1.fields import FieldInfo as PydanticFieldInfo
+from pydantic.v1.fields import ModelField, Undefined, UndefinedType
+from pydantic.v1.main import validate_model
+from pydantic.v1.typing import NoArgAnyCallable, resolve_annotations
+from pydantic.v1.utils import ROOT_KEY, Representation
 from sqlalchemy import (
     Boolean,
     Column,
@@ -52,6 +53,8 @@ from sqlalchemy.sql.sqltypes import LargeBinary, Time
 from .sql.sqltypes import GUID, AutoString
 
 _T = TypeVar("_T")
+
+ModelMetaclass = type(BaseModel)
 
 
 def __dataclass_transform__(
